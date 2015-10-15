@@ -1,7 +1,6 @@
+"use strict";
 
-# Our customers are going to buy lots of melons!
-
-melons_to_add = ['Ogen', 'Horned Melon', 'Watermelon', 'Casaba',
+var melonList = ['Ogen', 'Horned Melon', 'Watermelon', 'Casaba',
                  'Sharlyn', 'Xigua', 'Ogen', 'Christmas', 'Christmas',
                  'Christmas', 'Christmas', 'Watermelon', 'Sharlyn', 'Xigua',
                  'Cantaloupe', 'Christmas', 'Watermelon', 'Christmas',
@@ -11,21 +10,26 @@ melons_to_add = ['Ogen', 'Horned Melon', 'Watermelon', 'Casaba',
                  'Horned Melon', 'Sharlyn', 'Cantaloupe', 'Christmas',
                  'Horned Melon', 'Horned Melon', 'Horned Melon', 'Xigua', 'Xigua',
                  'Watermelon', 'Cantaloupe', 'Casaba', 'Cantaloupe', 'Casaba',
-                 'Watermelon', 'Santa Claus', 'Casaba']
+                 'Watermelon', 'Santa Claus', 'Casaba'];
 
 
-def count_melons(melon_list):
-    """Takes in a list, and returns a dictionary with melon counts."""
+function countMelons(melonList)
+{
+    var melonCounts = {};
 
-    melon_counts = {}
+    for (var i = 0; i < melonList.length; i++)
+    {
+        var melon = melonList[i];
 
-    for melon in melon_list:
-        if melon in melon_counts:
-            melon_counts[melon] = melon_counts[melon] + 1
+        if (melonCounts[melon] === undefined)
+        {
+            melonCounts[melon] = 1;
+        }
+        else
+        {
+            melonCounts[melon] += 1;
+        }
+    } //end for-loop
 
-        else:
-            melon_counts[melon] = 1
-
-    print melon_counts
-
-    return melon_counts
+    return melonCounts;
+} //end countMelons()
